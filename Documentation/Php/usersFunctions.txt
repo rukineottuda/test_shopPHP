@@ -1,0 +1,45 @@
+Демонстрация рекурсии
+Есть массив с категориями и подкатегориями товаров
+$array = array (
+	'Автотехника' => array(
+		'Вело' => array(
+			'Велосипеды' => array(
+				'(товар) Extreme' =>10,
+				'(товар) Author' => 4,
+				),
+			'Самокаты' => 12,
+			),
+		'Авто' => array(
+			'Opel' =>array(
+				'(товар) Vivaro' => 5,
+				),
+			'(товар) Honda' => 10,
+			'(товар) Audi' => 11,
+			),
+		'(товар) Аксессуары' => 7,
+		),
+	'Фототехника' => array(
+		'(товар) Фотокамеры' => 6,
+		'(товар) Фотокамеры' => 3,
+		),
+	'(товар) Другое' => 3,
+
+	);
+
+//Пример рекурсивного поиска в массиве;
+	function sum($array, $level = 0){
+	static	$count;//количество элементов
+	static	$items;//остатки на складе
+	if(is_array($array)){
+		$level++;//изначально 0 увеличена на 1
+		foreach ($array as $element){
+			sum($element, $level);
+			}
+		}else{
+			$count++;
+			$items += $array;
+		}
+			return array('count' => $count, 'items' => $items);
+	}
+$result = sum($array);
+print_r($result);

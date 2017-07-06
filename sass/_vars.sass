@@ -1,0 +1,13 @@
+$btn: #14B75A
+$accent: #ECB124
+$blue: #414E5B
+=mt($time)
+	transition: all $time ease
+
+//px с колоночной системой
+@function calc-px($col-number, $col-width)
+	@return ($col-width * $col-number)
+
+//Px to persent
+@function calc-ps($col-nr, $col-wh)
+	@return ($col-nr / $col-wh) * 100%

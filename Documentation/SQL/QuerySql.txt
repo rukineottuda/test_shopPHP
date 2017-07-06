@@ -1,0 +1,96 @@
+Комментирование строк производится --
+Most important key-words:
+FROM
+WHERE
+AND
+OR
+NOT
+ON
+ORDER BY
+IS NULL
+TOP
+MIN()
+MAX()
+AS
+COUNT()
+AVG()
+SUM()
+LIKE pattern _ %
+IN
+WildCards??? не въехал пока что*
+BETWEEN
+ALiases
+JOINS(объединение по колонке)
+Inner Join
+Left Join
+Right Join
+Full Join
+Self Join
+Union
+Group By
+Desc
+Asc
+Having
+Exists
+Any
+All
+
+Most Important Sql Commands:
+SELECT * FROM table_name WHERE column_name = "Mexico"; - extracts data from a database
+SELECT * FROM table_name WHERE ColumnID = 1;( при обращении к id кавычки не требуются)
+SELECT * FROM table_name WHERE column_name = 'Germany' AND City ='Berlin';
+SELECT * FROM table_name ORDER BY column_name;
+SELECT LastName, FirstName, Address FROM Persons
+WHERE Address IS NULL;
+SELECT TOP number|persent column_name(s) FROM table_name WHERE condition;
+SELECT MIN(column_name) FROM table_name WHERE condition;
+SELECT MAX(column_name) FROM table_name WHERE condition;
+SELECT MAX(Price) AS LArgestPrice FROM Products;
+SELECT COUNT(column_name) FROM table_name WHERE condition;
+SELECT AVG(column_name) FROM table_name WHERE condition;
+SUM(column_name) FROM table_name WHERE condition;
+SELECT column_name(s) FROM table_name WHERE column_name IN(value1,value2, ...);
+или
+SELECT column_name FROM table_name WHERE column_name IN(SELECT STATEMENT);
+SELECT column_name(s) FROM table_name WHERE column_name BETWEEN value1 AND value2;
+SELECT column_name AS alias_name FROM table_name; aliasColumn Syntax
+SELECT column_name FROM table_name AS alias_name; alias_name Syntax
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID; 
+здесь мы объединили заказы с id клиента
+SELECT column_name(s) FROM table1 INNER JOIN table2 ON table.column_name = table2.column_name;
+SELECT column_name(s) FROM table1 LEFT JOIN table2 ON table.column_name = table2.column_name;
+SELECT column_name(s) FROM table1 RIGHT JOIN table2 ON table1.column_name = table2.column_name;
+SELECT column_name(s) FROM table1 FULL OUTER JOIN table2 ON table1.column_name = table2.column_name;
+SELECT column_name(s) FROM table1 T1, table1 T2 WHERE condition;
+SELECT column_name(s) FORM table1 UNION ALL SELECT column_name(s) FROM table2;
+SELECT column_name(s) FROM table_name where condition GROUP BY column_name(s) ORDER BY column_name(s);
+SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country;
+SELECT COUNT(CustomerID), Country FORM Customers GROUP BY Country ORDER byCount(CustomerID) DESC;
+SELECT ShipperS.ShipperName, COUNT(Orders.OrderID) AS NumberOfOrders FROM Orders LEFT Join Shippers ON Orders.ShipperID = Shippers.ShipperID
+GROUP BY ShipperName;
+SELECT column_name(s) FROM WHERE GROUP BY HAVING condition ORDER BY column_name(s);
+SELECT column_name(s) FROM table_name WHERE EXISTS(SELECT column_name FROM table_name WHERE condition);
+SELECT column_name(s) FROM table_name WHERE column_name operator ANY (SELECT column_name FROM table_name WHERE condition);
+SELECT column_name(s) FROM table_name WHERE column_name operator ALL(SELECT column_name FROM table_name WHERE condition);
+SELECT * INTO newtable[IN externaldb] FROM oldtable WHERE condition;
+
+INSERT INTO - inserts new data into a database
+INSERT INTO table2  SELECT * FROM table1 WHERE condition;
+INSERT INTO table2 (column1, column2, column3, ...)
+SELECT column1, column2, column3, ... FROM table1 WHERE condition;
+UPDATE - updates data in a database
+UPDATE table_name SET column1 = value1, column2 = value2,...
+WHERE condition;
+Примечание. Будьте внимательны при обновлении записей в таблице! Обратите внимание на предложение WHERE в инструкции UPDATE аналогично действует DELETE.
+Предложение WHERE указывает, какие записи (ы) должны быть обновлены. Если вы опустите предложение WHERE, все записи в таблице будут обновлены!
+
+DELETE - deletes data from a database
+DELETE FROM table_name WHERE condition;
+
+CREATE DATABASE - creates a new database
+ALTER DATABASE - modifies a database
+CREATE TABLE - creates a new table
+ALTER TABLE - modifies a table
+DROP TABLE - deletes a table
+CREATE INDEX - creates an index (search key)
+DROP INDEX - deletes an index

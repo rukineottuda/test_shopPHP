@@ -1,0 +1,553 @@
+@import "bourbon"
+@import "vars.sass"
+
+//Load Libs SASS
+@import "app/libs/animate/animate.sass"
+@import "app/libs/font-awesome/css/font-awesome.sass"
+@import "app/libs/Magnific-Popup/magnific-popup.sass"
+@import "app/libs/owl-carousel/assets/owl.carousel.sass"
+@import "app/libs/selectize/dist/css/selectize.default"
+// @import "app/libs/multi_tabs_jq/multi_tabs"
+
+
+// main style Dont touch! START
+*::-webkit-input-placeholder
+	color: #222
+	opacity: 1
+
+*:-moz-placeholder
+	color: #222
+	opacity: 1
+
+*::-moz-placeholder
+	color: #222
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #222
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #222
+body input:required:valid,
+body textarea:required:valid
+	color: #222
+// main style Dont touch! END
+
+//Custom Styles Here
+	h3
+		text-align: center
+	p
+		font-size: em(20px)
+		font-family: OpenSansRegular, sans-serif
+		padding: 50px 30px
+		line-height: em(40px)
+		margin-top: 10%
+		color: #fff
+	img
+		margin-top: 20px
+
+.s-wide
+	width: 100%
+	// min-height: 500px
+	padding: 70px 0
+.s-services
+	position: relative
+//Slider Main START 
+.slider-wrap
+	position: relative
+	overflow: hidden
+	width: 100%
+	display: block
+// .slider-wrap::after
+// 	height: 20px
+// 	z-index: 1
+// 	width: 100%
+// 	content: ""
+// 	position: absolute
+// 	top: 94%
+// 	right: 0
+// 	bottom: 0
+// 	left: 0
+// 	box-shadow: rgba(red, .2) 0 5px 0  5px
+// 	// box-shadow: rgba(#fff, .2) 0 5px 0  5px
+.slider
+	position: relative
+	width: 100%
+	display: block
+	color: #fff
+	.slide
+		position: relative
+		padding-top: 100px
+		padding-bottom: 150px
+		h2
+			font-family: "OpenSansLight", sans-serif
+			font-size: em(38px)
+			margin-top: -60px
+			text-transform: uppercase
+		p
+			font-family: "OpenSansRegular", sans-serif
+			font-size: em(18px)
+			color: #fff
+			opacity: .6
+			margin-top: -20px
+		&-bg
+			background-size: cover
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			&::before
+				position: absolute
+				content: " "
+				background-color: #330000
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				opacity: .55
+		&-content
+			position: relative
+			padding-top: 80px
+		.slide-about-wrap
+			padding:  0 0 40px 20px
+		.slide-img-wrap
+			max-width: 400px
+			height: 150px
+			margin-top: -50px
+			padding: 20px 20px
+			img
+				border-radius: 20px 20px
+.owl-nav
+	width: 100%
+	position: absolute
+	top: 80%
+	left: 4%
+	.owl-prev,
+	.owl-next
+		color: #fff
+		font-size: em(39px)
+		position: absolute
+		top: -150px
+		z-index: 1000
+		cursor: pointer
+	.owl-prev
+	.owl-next
+		margin-left: 90%
+.owl-dots
+	position: absolute
+	left: 44%
+	top: 90%
+	.owl-dot
+		width: 25px
+		height: 25px
+		display: inline-block
+		background-color: #200000
+		border-radius: 200px
+		margin-left: 10px
+		span
+			border-radius: 50px
+			display: inline-block
+			width: 10px
+			height: 10px
+			margin: 0px 6px 2px 7px
+			&:hover
+				background-color: bisque
+			&:active
+				background-color: bisque
+//Slider Main END 
+
+
+//our-price
+.our-price
+	// box-shadow: 0 5px 0 5px hsla(0,0%,100%,.2)
+	// z-index: 1000
+	box-shadow: rgba(#fff, .2) 0 5px 0  5px
+	position: relative
+	h3
+		text-align: center
+//Table style main START
+.table-wrap
+	table
+		width: 100%
+		text-align: center
+		margin-top: 40px
+		cursor: pointer
+		// width: 400px
+		th,td
+			// vertical-align: baseline
+			// border: 1px solid #000
+		// background: url("../img/bg_top.jpg")
+		.row_col:hover
+			background-color: #DBC4B1
+		tr:hover
+			background-color: #eee4bb
+		th,td
+			padding: 5px 10px
+		th
+			background-color: bisque
+//Table style main End
+.s-ourTeam
+	h3
+		text-align: center
+//circle-item
+
+//Main-tabs Start
+.tabs
+	width: 100%
+	margin: 0 auto
+	padding: 0
+
+.tabs-nav
+	overflow: hidden
+	padding-right: 14px
+	li
+		color: #555
+		padding: 5px 14px 3px
+		position: relative
+		text-decoration: none
+		background-color: #e4e4e4
+		border-top: 1px solid #ccc
+		border-radius: 6px 6px 0px 0px
+		float: left
+		display: block
+		cursor: pointer
+		margin-right: 2px
+		font-family: 'Roboto',Helvetica,sans-serif
+		font-size: 14px
+		text-transform: none
+		&:before
+			right: -4px
+			z-index: 2
+		&:after
+			left: -4px
+		&:hover
+			background-color: #e9e9e9
+// animation tabs
+.tabs li.active
+	background-color: #f4f4f4
+	color: #555
+	&:hover
+		background-color: #f4f4f4
+		color: #555
+		z-index: 3
+
+.tabs-box >
+	div
+		display: none
+		min-height: 100px
+		padding: 10px 15px
+		// background: rgba(255, 255, 255, 0.9)
+		border: 1px solid #ccc
+		// border-radius: 8px 8px 8px 8px
+		animation: fade 0.5s linear
+	.active
+		display: block
+
+@keyframes fade
+	0%
+		opacity: 0
+
+	100%
+		opacity: 1
+// Main-tabs END
+
+//Main Hover circle start
+.item_person
+	position: relative
+	margin-right: 200px
+	width: 220px
+	height: 220px
+	border-radius: 50%
+	.img-wrap
+		+mt(.5s)
+		z-index: 11
+		&::before
+			content: ""
+			width:  100%
+			height: 100%
+			position: absolute
+			display: block
+			z-index: 2
+			border-radius: 50%
+			box-shadow: inset 0 0 0 16px rgba(bisque, 0.6),
+			0 1px 2px rgba(0, 0, 0, 0.3)
+
+			// box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.6),
+			// 0 1px 2px rgba(0, 0, 0, 0.3)
+			+mt(.5s)
+		img
+			border-radius: 50%
+	.info_person
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		border-radius: 50%
+		padding: 15px 20px
+		opacity: 0
+		text-align: center
+		background-color: #DBC4B2
+		// background-color: #1a4a72
+		+mt(.5s)
+		h4
+			text-transform: uppercase
+			position: relative
+			letter-spacing: 2px
+			font-size: em(17px)
+			// margin: 0 30px
+			line-height: 1.0
+			// padding: 0 0 0 0 
+			text-shadow: 0 0 1px #fff, 0 1px 2px rgba(0, 0, 0, 0.3)
+			color: #fff
+		p
+			color: #F6F6F6
+			padding: 10px 5px
+			font-style: italic
+			margin: 0 15px
+			font-size: em(12px)
+			border-top: 1px solid rgba(255, 255, 255, 0.5)
+	a:hover
+		.img-wrap
+			transform: scale(0.5) translate(100%)
+		.info_person
+			opacity: 1
+// Main Hover circle END
+.slider-wrap_item
+	min-height: 120px
+	padding: 0 2% 60px 2%
+	position: relative
+	.slide-bg
+		background-size: cover
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+	&::before
+		content: ""
+		background-color: lightslategrey
+		opacity: .6
+		z-index: 1
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		position: absolute
+	.item_person
+		margin-top: 25px
+		left: 20px
+		width: 180px
+		height: 180px
+	h1
+		color: green
+		position: relative
+		z-index: 1
+//s-services END
+// Our team
+.slider2 
+	.owl-nav
+		width: 100%
+		position: absolute
+		top: 110%
+		left: 4%
+	.owl-prev,
+	.owl-next
+		color: #fff
+		// color: bisque
+		font-size: em(39px)
+		position: absolute
+		top: -130px
+		z-index: 1000
+	.owl-prev
+		margin-left: -6%
+	.owl-next
+		margin-left: 96%
+	.owl-dots
+		position: absolute
+		left: 44%
+		top: 100%
+		margin-top: 20px
+		.owl-dot
+			width: 25px
+			height: 25px
+			display: inline-block
+			background-color: #200000
+			border-radius: 200px
+			margin-left: 10px
+			span
+				border-radius: 50px
+				display: inline-block
+				width: 10px
+				height: 10px
+				margin: 0px 6px 2px 7px
+				&:hover
+					background-color: bisque
+				&:active
+					background-color: bisque
+.slider3
+	.owl-nav
+		width: 100%
+		position: absolute
+		top: 110%
+		left: 4%
+	.owl-prev,
+	.owl-next
+		color: #fff
+		// color: bisque
+		font-size: em(39px)
+		position: absolute
+		top: -130px
+		z-index: 1000
+	.owl-prev
+		margin-left: -6%
+	.owl-next
+		margin-left: 96%
+.slider4
+	.owl-nav
+		width: 100%
+		position: absolute
+		top: 110%
+		left: 4%
+	.owl-prev,
+	.owl-next
+		color: #fff
+		// color: bisque
+		font-size: em(39px)
+		position: absolute
+		top: -130px
+		z-index: 1000
+	.owl-prev
+		margin-left: -6%
+	.owl-next
+		margin-left: 96%
+//main-foot START
+.main-foot
+	background-color: #330000
+	color: #fff
+//main-foot END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .tabs-nav
+// 	overflow: hidden
+// 	padding-left: 14px
+// 	padding-right: 14px
+// 	li
+// 		color: #555
+// 		padding: 5px 14px 3px
+// 		position: relative
+// 		text-decoration: none
+// 		background-color: #fff
+// 		border-radius: 30px
+// 		border: 1px solid red
+// 		float: left
+// 		display: block
+// 		cursor: pointer
+// 		margin-right: 8px
+// 		font-family: 'Roboto',Helvetica,sans-serif
+// 		font-size: 14px
+// 		text-transform: none
+// 		&:active
+// 			background-color: red
+// .tabs-box >
+// 	div
+// 		display: none
+// 		padding: 10px 15px
+// 		background: rgba(255, 255, 255, 0.9)
+// 		border: 1px solid #ccc
+// 		box-sizing: border-box
+// 		-webkit-animation: fade 0.5s linear
+// 		-ms-animation: fade 0.5s linear
+// 		animation: fade 0.5s linear
+// 	.active
+// 		display: block
+
+// @keyframes fade
+// 	0%
+// 		opacity: 0
+
+// 	100%
+// 		opacity: 1
+.owl-controls
+	text-align: center
+	.owl-dot
+		display: inline-block
+		span
+			background-color: #333
+			-webkit-border-radius: 30px
+			-moz-border-radius: 30px
+			border-radius: 30px
+			display: block
+			height: 12px
+			margin: 5px 7px
+			width: 12px
+			filter: Alpha(Opacity = 500)
+			//IE7 fix
+			opacity: 0.5
+		&.active span, &:hover span
+			filter: Alpha(Opacity = 100)
+			//IE7 fix
+			opacity: 1
+.xuin9
+	background-color: red
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+//ALWAYS END
+@import "media"
+
+
+

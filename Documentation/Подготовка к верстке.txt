@@ -1,0 +1,14 @@
+1) Настройка и установка галпа 
+2) Подготовка front-end окружения,95% проблем неправильные пути!!!
+3) библиотеки
+					'./app/libs/modernizr/modernizr.js',
+				'./app/libs/jquery/jquery-1.11.2.min.js',
+				'./app/libs/waypoints/waypoints.min.js',
+				'./app/libs/animate/animate-css.js',
+				'./app/libs/plugins-scroll/plugins-scroll.js',
+				'./app/libs/superfish/dist/js/superfish.min.js',
+				'./app/libs/owl.carousel/dist/owl.carousel.min.js',
+				'./app/libs/jQuery.mmenu/dist/js/jquery.mmenu.all.min.js',
+				'./app/libs/equalHeights/jquery.equalheights.min.js',// чтобы колонки были одинаковой высоты ,в независимости от содержимого
+				'./app/libs/Magnific-Popup/dist/jquery.magnific-popup.min.js',// какойтонекритичный косяк в min.js (исходнике)
+				'./app/libs/jquery-animateNumber-0.0.13/dist/jquery.animateNumber.min.js',

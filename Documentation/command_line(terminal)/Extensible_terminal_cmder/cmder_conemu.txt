@@ -1,0 +1,8 @@
+﻿Documentation:
+http://cmder.net
+https://github.com/cmderdev/cmder
+https://isqua.ru/blog/2016/11/05/nastroika-tierminala-cmder-v-windows/
+http://nicothin.pro/page/console-windows
+
+1)Разархивируем на C в предварительно создав папку cmder
+2) win+alt+p вызовем настройки и где storage указан файл с настройками жмём Export(Делаем бекап  навсякий случай)

@@ -1,0 +1,233 @@
+//Создаём класс
+class Car{
+
+}
+//Объекты экземпляры класса
+$car1 = new Car;
+$car2 = new Car;
+$car3 = new Car;
+
+Конструктор и деструктор
+public function__construct(){
+	echo'<br> New object of class' .__CLASS__.'created';
+	echo'<br> Method' .__METHOD__.'called';
+}
+
+public function__destruct(){
+	echo'<br> New object of class' .__CLASS__.'created';
+	echo'<br> Method' .__METHOD__.'called';
+}
+
+Константы и обращения к ним
+const WHEELS = 4;
+echo Car::WHEELS; // обращение ,если константа объявлена в классе
+echo self::WHEELS; // обращение ,если константа объявлена в классе
+
+Наследование и инкапсуляция
+Например есть классы : Car, Bicycle, Skate;
+Car
+	$color
+	$speed
+	$brand
+	$fuel
+	tripTime()
+	fuelConsumption()
+
+Bicycle
+	$color
+	$speed
+	$brand
+	$type
+	tripTime()
+Skate
+	$color
+	$speed
+	$brand
+	tripTime()
+Vehicle
+	$color
+	$speed
+	$brand
+	tripTime()
+	Добавляем родительский класс Vehicle(superclass)
+
+	class Vehicle{
+		public $color;
+		public $speed;
+		public $brand;
+		public function tripTime($distance){
+		$time = $distance / $this->speed;
+		return $time;
+	}
+}
+class Bicycle extends Vehicle{
+	public $type;
+	const CALORIES_PER_HOUR = 500;
+	public function caloriesBurned($distance){
+		$time = $this->tripTime($distance);
+		$calories = $time * self::CALORIES_PER_HOUR;
+		return $calories;
+	}
+}
+class Car extends Vehicle{
+	public $fuel;
+	public function fuelConsumption($distance) {
+		$result = ($this->fuel * $distance) / 100;
+		return $result;
+	}
+}
+$car1 = new Car;
+$car1->speed = 110;
+$car1->fuel = 12;
+
+$car2 = new Car;
+$car2->speed = 130;
+$car2->fuel = 14;
+
+
+$bicycle = new Bicycle;
+$bicycle->speed = 20;
+$distance = 100;
+
+Можно даже переопределять методы родительского класса в дочернем
+Также можем обращаться из дочернего класса  использовать метод родительского класса
+::parent функцияя класса;
+final запрет переопределения метода
+
+Инкапсуляция
+Модификаторы доступа: 
+public
+protected(Защищённый)-позволяет получать доступ текущему классу(в котором определён сам член класса),
+и наследуемым классам.
+private(закрытый)-ограничивает область видимости так, что доступ к члену класса имеет только класс, в котором объявлен.
+class Phone {
+	public function getNumberByName($name)
+	{
+		//..
+	}
+	public function dialNumber(){
+
+	}
+	public function call($name){
+		$number = $this-> getNumberByNamt($name);
+		$this->dialNumber($number);
+	}
+}
+$phone1 = new Phone;
+$phone1->call('Саша');
+
+Демонстрация работы модификаторов доступа, для дальнейшей инкапсуляции
+
+class Base{
+	public $a = 'a public';
+	protected $b = 'b public';
+	private $c = 'c public';
+function printProperties(){
+	echo '<br>' .$this->a;
+	echo '<br>' .$this->b;
+	echo '<br>' .$this->c;
+	}
+} 
+$obj = new Base();
+
+echo '<br>'. $obj->a;//Работает
+echo '<br>'. $obj->b;// неисправимая
+echo '<br>'. $obj->c;//неисправимая
+//Иными словами protected и private могут быть получены только внутри класса.
+$obj->printProperties();
+
+Полиморфизм
+Полиморфизм - когда используется одинаковый код(для объектов разных классов, но будут вызываться разные методы класса(функции))
+Полиморфизм на примере новостной ленты
+Создаём таблицу publication
+Создаём класс Publication который будет наследован следующими классами
+Publication
+	ClassNewsPublication
+	ClassPhotoReportPublication
+	ClassArticlePublication
+
+После создадим файлы .php:
+classes.php тут будут содержаться классы которые дублируют поля в таблице, которые будут подключаться в файл data.php
+data.php тут будут получаться данные из базы данных подготавливает их для отображения
+publications.php Вывод списка публикаций
+
+Абстрактный класс, интерфейс.
+Контроль типа(Tipe hinting) можно контролировать какой тип переда аргументом в функцию(метод класса).
+Сигнатура метода
+Абстрактные классы и методы
+
+1.Сигнатуры методов должны совпадать, т.е контроль типов(type hint) 
+и количество обязательных аргументов должно быть одинаковым.И если какой из обязательных аргументов не был передан, то будет ошибка.
+Но если указать элемент пустым то ошибки не будет $pusto = '';
+
+2.Абстрактный класс может иметь обычные(реализованные) методы и абстрактные методы.
+
+3.Если класс содержит хотя бы 1 абстрактный метод, он должен быть объявлен как абстрактный иначе будет ошибка.
+
+Aбстрактный класс объявляется с помощью abstract
+Абстрактный класс - базовый класс, который не предполагает создания экземпляров.Он содержит характеристики сущности,
+которые отличают её от других сущностей;
+Абстрактный метод -метод класса, реализация для которого отсутствует.
+свойства +
+методы с реализацией +
+объявляет методы без реализации +
+создание экземпляра не возможно +
+наследуется(extends) +
+Наследник имеет только одного родителя +
+Все методы должны быть public -
+
+Интерфейсы
+Интерфейс объявляется с помощью interface
+Похожи на абстрактный класс, но имеет некоторые отличия.
+свойства -
+методы с реализацией +
+объявляет методы без реализации +
+создание экземпляра не возможно +
+реализуется(implements) +
+Наследник имеет только одного родителя +
+Все методы должны быть public +
+
+Пример использования абстрактного класса и интерфейса
+interface Vehicle{
+	public function info();
+}
+
+//Vehicle->Car
+interface Car extends Vehicle{
+	public function drive();
+}
+
+class Audi implements Car{
+	public function info(){
+		echo '<br>Audi is a German automobile manufacterer.';
+	}
+	public function drive(){
+		echo '<br>Audi drives';
+	}
+}
+
+//Vehicle ->Boat
+interface Boat extends Vehicle{
+	public function swim();
+}
+class MersedesAmphibious implements Car, Boat{
+	public function info(){
+		echo '<br>Mersedes is a German automobile manufacture Amfibius';
+	}
+	public function drive(){
+		echo '<br>Mersedes drives';
+	}
+	public function swim(){
+		echo '<br>Mersedes swims';
+	}
+}
+$audi = new Audi;
+$audi->info();
+$audi->drive();
+$mersedesAmphibious1 = new MersedesAmphibious;
+$mersedesAmphibious1->info();
+$mersedesAmphibious1->drive();
+$mersedesAmphibious1->swim();
+
+
+

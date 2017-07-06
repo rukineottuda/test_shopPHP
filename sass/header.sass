@@ -1,0 +1,282 @@
+@import "bourbon"
+@import "fonts.sass"
+@import "vars.sass"
+@import	"app/libs/owl-carousel/assets/owl.carousel.sass"
+
+//>Default
+body
+	background-color: #fff
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: "OpenSansRegular", sans-serif
+	overflow-x: hidden
+	color: #222
+.b,strong
+	font-family: "OpenSemiBold", sans-serif
+	font-weight: normal
+.hidden
+	display: none
+.responsive-img
+	max-width: 100%
+//table свойства как у таблицы
+.table
+	display: table
+	width: 100%
+.tr
+	display: table-row
+.td
+	display: table-cell
+	vertical-align: middle
+.contact-form
+	padding: 32px 26px
+	background-color: darken($blue, 5%)
+	.button
+		margin-top: 25px
+	&-head
+		text-align: center
+		h4
+			font-size: em(18px)
+			margin:
+				top: 0
+				bottom: 10px
+		p
+			color: #fff
+			opacity: .6
+			font-size: em(14px)
+			margin-top: 0
+form
+	label
+		margin-bottom: 12px
+		display: block
+		span
+			font-size: 14px
+			color: #fff
+			opacity: .3
+			display: block
+			margin-bottom: 3px
+		input, select, selectize-input
+			background-color: rgba(255, 255, 255, .6)
+			border-radius: 2px
+			border: none
+			padding: 9px 15px 7px
+			display: block
+			width: 100%
+			color: #222
+			font-size: em(15px)
+			border-bottom: $blue 4px solid
+			+mt(.5s)
+			&:focus
+				border-bottom: lighten($blue, 10%) 4px solid
+
+//< table end
+//<Default END
+
+//Style for main page
+h1, h2, h3, h4, h5 ,h6
+	font-family:  "OpenSansLight", sans-serif
+	font-weight: normal
+h1
+	font-size: em(41px)
+	line-height: 1.2
+.ishome
+	h1
+		margin-top: 0
+		text-align: left
+h2
+	font-size: em(32px)
+h3, h4
+	font-family: "OpenSansSemiBold", sans-serif
+	text-transform: uppercase
+	font-size: em(15px)
+h4
+	font-size: em(13px)
+ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+a
+	color: #000
+	display: block
+	outline: none !important
+.text-center
+	text-align: center
+//Style for main page end
+
+//>Start hat
+.main-head
+	position: relative
+	display: block
+	background-image: url(../img/bg_top.jpg)
+	min-height: 100vh
+	background-size: cover
+	background-position: top center
+	// overflow: hidden
+	z-index: 1000
+	box-shadow: rgba(#fff, .2) 0 5px 0  5px
+
+.mnu-line
+	padding-top: 48px
+.logo
+	display: block
+	width: 100px
+	// img
+	// 	width: 100%
+	svg
+		height: 90px
+		width: 100%
+		margin-top: -30px
+		path
+			fill: bisque
+nav
+	ul
+		list-style-type: none
+		padding: 0
+		margin: 0
+		li
+			display: inline-block
+
+// menu-topnot hidden
+.main-mnu
+	font-size: em(15px)
+	text-align: center
+	> ul
+		> li
+			display: inline-block
+			> a
+				display: block
+				padding: 10px 18px
+				color: bisque
+				+mt(.5s)
+				&:hover
+					color: #fff
+				&.active
+					a
+						color: #414e5b
+						text-decoration: underline
+
+.phone
+	text-align: right
+	.phone-wrap
+		color: bisque
+		font-family: "Exo2Bold", sans-serif
+		font-size: em(22px)
+		line-height: em(20px)
+		.fa
+			font-size: em(20px)
+			position: relative
+			top: 2px
+			margin-right: 5px
+	.callback
+		color: #fff
+		display: inline-block
+		line-height: em(18px)
+		font-size: em(15px)
+		border-bottom: 1px dashed #7e91a4
+		+mt(.5s)
+		&:hover
+			text-decoration: none
+			border-color: transparent
+.header-content
+	padding: 8% 0
+	.company-block
+		background-color: rgba(#000,.5)
+		color: bisque
+		padding: 10px 40px
+		// margin-top: -39%
+
+.mw-wrapper
+	color: bisque
+	text-align: center
+	margin-top: -2%
+	padding: 40px 0	
+.mouse-icon
+	border: 2px solid bisque
+	border-radius: 16px
+	height: 40px
+	width: 24px
+	display: inline-block
+	cursor: pointer
+	z-index: 1
+	opacity: .7
+	.wheel
+		-webkit-animation-name: t
+		animation-name: t
+		-webkit-animation-duration: 1s
+		animation-duration: 1s
+		-webkit-animation-timing-function: linear
+		animation-timing-function: linear
+		-webkit-animation-delay: 0s
+		animation-delay: 0s
+		-webkit-animation-iteration-count: infinite
+		animation-iteration-count: infinite
+		-webkit-animation-play-state: running
+		animation-play-state: running
+		position: relative
+		border-radius: 10px
+		background: bisque
+		width: 2px
+		height: 6px
+		top: 12px
+		margin-left: auto
+		margin-right: auto
+
+//Toggle mnu
+.toggle-mnu
+	position: absolute
+	top: 25px
+	right: 15px
+	display: block
+	width: 28px
+	height: 28px
+
+	span:after, span:before 
+		content: ""
+		position: absolute
+		left: 0
+		top: 9px
+
+	span:after
+		top: 18px
+
+	span 
+		position: relative
+		display: block
+
+	span, span:after, span:before
+		width: 100%
+		height: 2px
+		background-color: bisque
+		transition: all 0.3s
+		backface-visibility: hidden
+		border-radius: 2px
+
+	&.on span 
+		background-color: transparent
+
+	&.on span:before 
+		transform: rotate(45deg) translate(-1px, 0px)
+
+	&.on span:after 
+		transform: rotate(-45deg) translate(6px, -7px)
+.hidden-mnu
+	background-color: #1a1a1a
+	display: none
+	> ul
+		> li
+			display: block
+			&.active
+				a
+					text-decoration: underline
+					color: $accent
+			> a
+				&:hover
+					color: #fff
+					background-color: $accent
+					text-decoration: none
+
+
+
+
+	

@@ -1,0 +1,24 @@
+Три способа  работы PHP и MySQL
+Установка MySQLi или pdo
+1)Подключаемся к серверу
+
+MySQLi(Объектно-ориентированный)
+
+//DataBase Connect OOP-STYLE
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$db ='testsite';
+// $base = 'testsite';
+$conn = new mysqli($servername, $username, $password, $db);
+
+if($conn->connect_error){
+    die('Connection failed: ' . $conn->connect_error);
+}else{
+    echo 'Connected successfully';
+}
+
+
+
+
+

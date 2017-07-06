@@ -1,0 +1,69 @@
+Функции для работы с переменными:
+isset проверяет задано ли значение переменной
+
+empty проверяет является ли переменная пустой
+gettype возвращает тип переменной
+группы: is_*: is_array, is_int, is_bool проверяет отношение к определенному типу
+get_defined_vars  для отладки кода(все переменные)
+array_reverse() возвращает массив в обратном порядке
+
+Форматирование строк:
+print
+print_r
+
+printf(format, $percent, $total, $city);
+sprintf($format);
+
+Работа со строками
+strlen
+substr получаем часть строки(подстроку)
+str_replace 
+explode разбиваем строку на части
+emplode склеиваем из массива строку
+
+Математические ф-ии 
+max
+min
+rand
+round
+ceil  округляет к блольшему
+floor к меньшему
+
+Работа с массивами
+in_array
+array_values
+array_keys
++ Объединить массивы
+array_intersect
+array_diff
+
+сортировка массивов
+sort
+ksort
+лучше сортировать с помощью баз данных
+
+Дата и время
+
+getdate
+timestamp 
+mktime
+
+Форматирование даты
+
+date
+
+
+Языковые конструкции 
+echo
+return
+die & exit
+echo & print
+isset & unset
+include & include_once
+require & require_once
+empty
+eval
+list
+
+Подключение файлов
+include_once 

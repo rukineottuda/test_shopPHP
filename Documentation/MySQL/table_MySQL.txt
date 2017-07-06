@@ -1,0 +1,12 @@
+sql to create table
+===========
+$sql = "CREATE TABLE MyGuests (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+firstname VARCHAR(30) NOT NULL,
+lastname VARCHAR(30) NOT NULL,
+email VARCHAR(50),
+reg_date TIMESTAMP
+)";
+Insert Data
+============
+INSERT INTO table_name(column1,column2,column3,...) VALUES(value1,value2,value3,...)
